@@ -8,7 +8,7 @@ import jjh.movie.app.presentation.base.BaseViewBindingActivity
 import jjh.movie.app.presentation.databinding.ActivityMainBinding
 
 class MainActivity : BaseViewBindingActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
-    private lateinit var host: NavHostFragment
+    private lateinit var navHostFragment: NavHostFragment
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,8 +18,8 @@ class MainActivity : BaseViewBindingActivity<ActivityMainBinding>(ActivityMainBi
     }
 
     private fun initNavigation() {
-        host = supportFragmentManager.findFragmentById(R.id.container_main) as NavHostFragment
-        navController = host.navController
+        navHostFragment = supportFragmentManager.findFragmentById(R.id.container_main) as NavHostFragment
+        navController = navHostFragment.navController
 
         binding.bottomNavBar.setupWithNavController(navController)
     }
