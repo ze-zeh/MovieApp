@@ -11,7 +11,9 @@ class SearchFragment :
         initView()
     }
 
-    private fun initView() {
+    override fun initView() {
+        with(binding) {
 
+        }
     }
 }

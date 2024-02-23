@@ -11,7 +11,9 @@ class CategoryFragment :
         initView()
     }
 
-    private fun initView() {
+    override fun initView() {
+        with(binding) {
 
+        }
     }
 }

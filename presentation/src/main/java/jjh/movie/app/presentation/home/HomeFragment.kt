@@ -10,7 +10,7 @@ class HomeFragment : BaseViewBindingFragment<FragmentHomeBinding>(FragmentHomeBi
         initView()
     }
 
-    private fun initView() {
+    override fun initView() {
         with(binding) {
             
         }
