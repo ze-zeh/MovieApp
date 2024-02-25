@@ -8,7 +8,7 @@ import jjh.movie.app.presentation.databinding.FragmentSearchBinding
 class SearchFragment :
     BaseViewBindingFragment<FragmentSearchBinding>(FragmentSearchBinding::inflate) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        initView()
+        super.onViewCreated(view, savedInstanceState)
     }
 
     override fun initView() {
