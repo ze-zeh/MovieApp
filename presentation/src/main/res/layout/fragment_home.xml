@@ -26,42 +26,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/tv_daily_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:paddingVertical="10dp"
-        android:text="@string/daily_top"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_daily_more"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="10dp"
-        android:backgroundTint="@color/gray"
-        android:background="@drawable/ic_arrow_right"
-        app:layout_constraintBottom_toBottomOf="@id/tv_daily_top"
-        app:layout_constraintTop_toTopOf="@id/tv_daily_top"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_daily_top"
+        android:id="@+id/rv_box_office"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clipToPadding="false"
-        android:orientation="horizontal"
-        android:paddingEnd="10dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/tv_daily_top"
-        tools:itemCount="9"
-        tools:listitem="@layout/item_ranking" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_box_office" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

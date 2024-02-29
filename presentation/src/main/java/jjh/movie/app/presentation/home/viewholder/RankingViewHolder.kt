@@ -9,22 +9,22 @@ import kotlin.math.abs
 
 class RankingViewHolder(
     private val binding: ItemRankingBinding,
-    private val onMovieItemClickListener: () -> Unit,
 ) :
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(movie: Movie) {
         with(binding) {
             root.setOnClickListener {
-                onMovieItemClickListener()
+
             }
 
             tvRanking.text = (movie.rank).toString()
 
             if (movie.rankIntensity == 0) {
-                ivRankUpDown.visibility = View.GONE
-                tvRankIntensity.visibility = View.GONE
+                tvRankSame.visibility = View.VISIBLE
             } else {
+                ivRankUpDown.visibility = View.VISIBLE
+                tvRankIntensity.visibility = View.VISIBLE
                 tvRankIntensity.text = abs(movie.rankIntensity).toString()
 
                 if (movie.rankIntensity > 0) {

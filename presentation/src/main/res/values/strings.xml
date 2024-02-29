@@ -10,4 +10,5 @@
     <string name="daily_top">일간 박스 오피스 Top 10</string>
     <string name="weekly_top">주간 박스 오피스 Top 10</string>
     <string name="independent_top">독립 영화 Top 10</string>
+    <string name="ranking_same">-</string>
 </resources>

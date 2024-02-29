@@ -14,7 +14,7 @@
         android:includeFontPadding="false"
         android:lineSpacingExtra="0dp"
         android:textColor="@color/white"
-        android:textSize="48sp"
+        android:textSize="48dp"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,9 +24,10 @@
         android:id="@+id/iv_rank_up_down"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/tv_rank_intensity"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/tv_rank_intensity"
-        app:layout_constraintStart_toEndOf="@id/tv_ranking" />
+        app:layout_constraintStart_toEndOf="@id/tv_ranking"
+        app:layout_constraintTop_toTopOf="@id/tv_rank_intensity" />
 
     <TextView
         android:id="@+id/tv_rank_intensity"
@@ -36,7 +37,21 @@
         android:textColor="@color/white"
         android:textSize="16dp"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_ranking"
         app:layout_constraintStart_toEndOf="@id/iv_rank_up_down" />
+
+    <TextView
+        android:id="@+id/tv_rank_same"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:text="@string/ranking_same"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_ranking"
+        app:layout_constraintStart_toEndOf="@id/tv_ranking" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
