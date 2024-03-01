@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import jjh.movie.app.presentation.databinding.ItemRankingBinding
 import jjh.movie.app.presentation.ui.home.viewholder.RankingViewHolder
 
-class RankingAdapter : ListAdapter<Movie, RecyclerView.ViewHolder>(rankingDiffCallback) {
+class RankingAdapter(
+    private val itemClickListener: (Int) -> Unit,
+) :
+    ListAdapter<Movie, RecyclerView.ViewHolder>(rankingDiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return RankingViewHolder(
             ItemRankingBinding.inflate(
@@ -16,6 +19,7 @@ class RankingAdapter : ListAdapter<Movie, RecyclerView.ViewHolder>(rankingDiffCa
                 parent,
                 false,
             ),
+            itemClickListener,
         )
     }
 

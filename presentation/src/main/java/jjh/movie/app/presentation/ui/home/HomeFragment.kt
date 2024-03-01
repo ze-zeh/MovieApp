@@ -2,6 +2,7 @@ package jjh.movie.app.presentation.ui.home
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import jjh.movie.app.presentation.databinding.FragmentHomeBinding
 import jjh.movie.app.presentation.ui.base.BaseViewBindingFragment
 import jjh.movie.app.presentation.ui.home.adapter.BoxOffice
@@ -10,7 +11,13 @@ import jjh.movie.app.presentation.ui.home.adapter.Movie
 
 class HomeFragment : BaseViewBindingFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     private val boxOfficeAdapter by lazy {
-        BoxOfficeAdapter()
+        BoxOfficeAdapter { key ->
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToDetailFragment(
+                    key
+                )
+            )
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -7,10 +7,11 @@ import jjh.movie.app.presentation.ui.home.adapter.BoxOffice
 
 class BoxOfficeViewHolder(
     private val binding: ItemBoxOfficeBinding,
+    private val itemClickListener: (Int) -> Unit,
 ) :
     RecyclerView.ViewHolder(binding.root) {
     private val rankingAdapter by lazy {
-        RankingAdapter()
+        RankingAdapter(itemClickListener)
     }
 
     fun bind(boxOffice: BoxOffice) {

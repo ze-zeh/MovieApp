@@ -9,13 +9,14 @@ import kotlin.math.abs
 
 class RankingViewHolder(
     private val binding: ItemRankingBinding,
+    private val itemClickListener: (Int) -> Unit
 ) :
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(movie: Movie) {
         with(binding) {
             root.setOnClickListener {
-
+                itemClickListener(movie.key)
             }
 
             ivMoviePoster.clipToOutline = true

@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import jjh.movie.app.presentation.databinding.ItemBoxOfficeBinding
 import jjh.movie.app.presentation.ui.home.viewholder.BoxOfficeViewHolder
 
-class BoxOfficeAdapter : ListAdapter<BoxOffice, ViewHolder>(boxOfficeDiffCallback) {
+class BoxOfficeAdapter(
+    private val itemClickListener: (Int) -> Unit,
+) : ListAdapter<BoxOffice, ViewHolder>(boxOfficeDiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return BoxOfficeViewHolder(
             ItemBoxOfficeBinding.inflate(
@@ -16,6 +18,7 @@ class BoxOfficeAdapter : ListAdapter<BoxOffice, ViewHolder>(boxOfficeDiffCallbac
                 parent,
                 false,
             ),
+            itemClickListener
         )
     }
 
@@ -42,5 +45,5 @@ class BoxOfficeAdapter : ListAdapter<BoxOffice, ViewHolder>(boxOfficeDiffCallbac
 data class BoxOffice(
     val key: Int = -1,
     val name: String = "MovieName",
-    val ranking : List<Movie> = listOf(),
+    val ranking: List<Movie> = listOf(),
 )
