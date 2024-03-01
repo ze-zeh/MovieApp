@@ -1,7 +1,9 @@
-package jjh.movie.app.presentation.ui
+package jjh.movie.app.presentation.ui.home.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
 import jjh.movie.app.presentation.databinding.ItemBoxOfficeBinding
+import jjh.movie.app.presentation.ui.home.adapter.RankingAdapter
+import jjh.movie.app.presentation.ui.home.adapter.BoxOffice
 
 class BoxOfficeViewHolder(
     private val binding: ItemBoxOfficeBinding,

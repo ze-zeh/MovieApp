@@ -1,4 +1,4 @@
-package jjh.movie.app.presentation.ui
+package jjh.movie.app.presentation.ui.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import jjh.movie.app.presentation.databinding.ItemRankingBinding
+import jjh.movie.app.presentation.ui.home.viewholder.RankingViewHolder
 
 class RankingAdapter : ListAdapter<Movie, RecyclerView.ViewHolder>(rankingDiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {

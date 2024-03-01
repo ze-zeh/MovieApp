@@ -1,9 +1,10 @@
-package jjh.movie.app.presentation.ui
+package jjh.movie.app.presentation.ui.home.viewholder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import jjh.movie.app.presentation.R
 import jjh.movie.app.presentation.databinding.ItemRankingBinding
+import jjh.movie.app.presentation.ui.home.adapter.Movie
 import kotlin.math.abs
 
 class RankingViewHolder(
@@ -17,6 +18,7 @@ class RankingViewHolder(
 
             }
 
+            ivMoviePoster.clipToOutline = true
             tvRanking.text = (movie.rank).toString()
 
             if (movie.rankIntensity == 0) {
