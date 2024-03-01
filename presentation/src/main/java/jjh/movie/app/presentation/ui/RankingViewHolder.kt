@@ -1,10 +1,9 @@
-package jjh.movie.app.presentation.home.viewholder
+package jjh.movie.app.presentation.ui
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import jjh.movie.app.presentation.R
 import jjh.movie.app.presentation.databinding.ItemRankingBinding
-import jjh.movie.app.presentation.home.adapter.Movie
 import kotlin.math.abs
 
 class RankingViewHolder(

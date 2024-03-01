@@ -1,4 +1,4 @@
-package jjh.movie.app.presentation.home.adapter
+package jjh.movie.app.presentation.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import jjh.movie.app.presentation.databinding.ItemBoxOfficeBinding
-import jjh.movie.app.presentation.databinding.ItemRankingBinding
-import jjh.movie.app.presentation.home.viewholder.BoxOfficeViewHolder
 
 class BoxOfficeAdapter : ListAdapter<BoxOffice, ViewHolder>(boxOfficeDiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

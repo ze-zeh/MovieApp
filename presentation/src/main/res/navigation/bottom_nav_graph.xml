@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="jjh.movie.app.presentation.home.HomeFragment"
+        android:name="jjh.movie.app.presentation.ui.HomeFragment"
         android:label="OnboardingFragment"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/search_fragment"
-        android:name="jjh.movie.app.presentation.search.SearchFragment"
+        android:name="jjh.movie.app.presentation.ui.search.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search" />
 
     <fragment
         android:id="@+id/category_fragment"
-        android:name="jjh.movie.app.presentation.category.CategoryFragment"
+        android:name="jjh.movie.app.presentation.ui.category.CategoryFragment"
         android:label="CategoryFragment"
         tools:layout="@layout/fragment_category" />
 

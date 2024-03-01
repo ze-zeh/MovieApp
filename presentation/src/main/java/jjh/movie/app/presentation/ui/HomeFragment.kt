@@ -1,12 +1,9 @@
-package jjh.movie.app.presentation.home
+package jjh.movie.app.presentation.ui
 
 import android.os.Bundle
 import android.view.View
-import jjh.movie.app.presentation.base.BaseViewBindingFragment
+import jjh.movie.app.presentation.ui.base.BaseViewBindingFragment
 import jjh.movie.app.presentation.databinding.FragmentHomeBinding
-import jjh.movie.app.presentation.home.adapter.BoxOffice
-import jjh.movie.app.presentation.home.adapter.BoxOfficeAdapter
-import jjh.movie.app.presentation.home.adapter.Movie
 
 class HomeFragment : BaseViewBindingFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     private val boxOfficeAdapter by lazy {

@@ -1,4 +1,4 @@
-package jjh.movie.app.presentation
+package jjh.movie.app.presentation.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

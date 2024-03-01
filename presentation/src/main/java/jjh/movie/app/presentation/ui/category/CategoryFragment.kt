@@ -1,8 +1,8 @@
-package jjh.movie.app.presentation.category
+package jjh.movie.app.presentation.ui.category
 
 import android.os.Bundle
 import android.view.View
-import jjh.movie.app.presentation.base.BaseViewBindingFragment
+import jjh.movie.app.presentation.ui.base.BaseViewBindingFragment
 import jjh.movie.app.presentation.databinding.FragmentCategoryBinding
 
 class CategoryFragment :
