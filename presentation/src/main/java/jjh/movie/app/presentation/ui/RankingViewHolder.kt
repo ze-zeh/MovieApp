@@ -20,8 +20,11 @@ class RankingViewHolder(
             tvRanking.text = (movie.rank).toString()
 
             if (movie.rankIntensity == 0) {
+                ivRankUpDown.visibility = View.INVISIBLE
+                tvRankIntensity.visibility = View.INVISIBLE
                 tvRankSame.visibility = View.VISIBLE
             } else {
+                tvRankSame.visibility = View.INVISIBLE
                 ivRankUpDown.visibility = View.VISIBLE
                 tvRankIntensity.visibility = View.VISIBLE
                 tvRankIntensity.text = abs(movie.rankIntensity).toString()
