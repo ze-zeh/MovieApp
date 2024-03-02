@@ -9,7 +9,8 @@ import jjh.movie.app.presentation.databinding.ItemBoxOfficeBinding
 import jjh.movie.app.presentation.ui.home.viewholder.BoxOfficeViewHolder
 
 class BoxOfficeAdapter(
-    private val itemClickListener: (Int) -> Unit,
+    private val detailClickListener: (String) -> Unit,
+    private val movieClickListener: (Int) -> Unit,
 ) : ListAdapter<BoxOffice, ViewHolder>(boxOfficeDiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return BoxOfficeViewHolder(
@@ -18,7 +19,8 @@ class BoxOfficeAdapter(
                 parent,
                 false,
             ),
-            itemClickListener
+            detailClickListener,
+            movieClickListener,
         )
     }
 
@@ -44,6 +46,7 @@ class BoxOfficeAdapter(
 
 data class BoxOffice(
     val key: Int = -1,
+    val boxOfficeType: String = "BoxOfficeType",
     val name: String = "MovieName",
     val ranking: List<Movie> = listOf(),
 )
