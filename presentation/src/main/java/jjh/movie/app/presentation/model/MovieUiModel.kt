@@ -3,7 +3,7 @@ package jjh.movie.app.presentation.model
 data class MovieUiModel(
     val key: Int = -1,
     val rank: Int = 0,
-    val name: String = "MovieName",
+    val name: String = "",
     val rankIntensity: Int = 0,
 ) {
     companion object {

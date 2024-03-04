@@ -5,8 +5,8 @@ import jjh.movie.app.presentation.model.MovieUiModel.Companion.dummyMovies
 
 data class BoxOfficeUiModel(
     val key: Int = -1,
-    val boxOfficeType: String = "BoxOfficeType",
-    val name: String = "MovieName",
+    val boxOfficeType: String = "",
+    val name: String = "",
     val ranking: List<MovieUiModel> = listOf(),
 ) {
     companion object {
