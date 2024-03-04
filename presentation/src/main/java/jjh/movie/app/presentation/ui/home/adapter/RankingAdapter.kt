@@ -5,20 +5,21 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import jjh.movie.app.presentation.databinding.ItemRankingBinding
+import jjh.movie.app.presentation.model.MovieUiModel
 import jjh.movie.app.presentation.ui.home.viewholder.RankingViewHolder
 
 class RankingAdapter(
-    private val itemClickListener: (Int) -> Unit,
+    private val onRankingClick: (Int) -> Unit,
 ) :
-    ListAdapter<Movie, RankingViewHolder>(rankingDiffCallback) {
+    ListAdapter<MovieUiModel, RankingViewHolder>(rankingDiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RankingViewHolder {
         return RankingViewHolder(
-            ItemRankingBinding.inflate(
+            binding = ItemRankingBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false,
             ),
-            itemClickListener,
+            onRankingClick = onRankingClick,
         )
     }
 
@@ -27,19 +28,12 @@ class RankingAdapter(
     }
 
     companion object {
-        val rankingDiffCallback = object : DiffUtil.ItemCallback<Movie>() {
-            override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean =
+        val rankingDiffCallback = object : DiffUtil.ItemCallback<MovieUiModel>() {
+            override fun areItemsTheSame(oldItem: MovieUiModel, newItem: MovieUiModel): Boolean =
                 oldItem.key == newItem.key
 
-            override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean =
+            override fun areContentsTheSame(oldItem: MovieUiModel, newItem: MovieUiModel): Boolean =
                 oldItem == newItem
         }
     }
 }
-
-data class Movie(
-    val key: Int = -1,
-    val rank: Int = 0,
-    val name: String = "MovieName",
-    val rankIntensity: Int = 0,
-)

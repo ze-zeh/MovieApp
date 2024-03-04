@@ -5,12 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import jjh.movie.app.presentation.databinding.ItemBoxOfficeBinding
+import jjh.movie.app.presentation.model.BoxOfficeUiModel
 import jjh.movie.app.presentation.ui.home.viewholder.BoxOfficeViewHolder
 
 class BoxOfficeAdapter(
-    private val detailClickListener: (String) -> Unit,
-    private val movieClickListener: (Int) -> Unit,
-) : ListAdapter<BoxOffice, BoxOfficeViewHolder>(boxOfficeDiffCallback) {
+    private val onDetailClick: (String) -> Unit,
+    private val onRankingClick: (Int) -> Unit,
+) : ListAdapter<BoxOfficeUiModel, BoxOfficeViewHolder>(boxOfficeDiffCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoxOfficeViewHolder {
         return BoxOfficeViewHolder(
             ItemBoxOfficeBinding.inflate(
@@ -18,8 +19,8 @@ class BoxOfficeAdapter(
                 parent,
                 false,
             ),
-            detailClickListener,
-            movieClickListener,
+            onDetailClick = onDetailClick,
+            onRankingClick = onRankingClick,
         )
     }
 
@@ -28,22 +29,16 @@ class BoxOfficeAdapter(
     }
 
     companion object {
-        val boxOfficeDiffCallback = object : DiffUtil.ItemCallback<BoxOffice>() {
-            override fun areItemsTheSame(oldItem: BoxOffice, newItem: BoxOffice): Boolean =
-                oldItem.key == newItem.key
+        val boxOfficeDiffCallback = object : DiffUtil.ItemCallback<BoxOfficeUiModel>() {
+            override fun areItemsTheSame(
+                oldItem: BoxOfficeUiModel,
+                newItem: BoxOfficeUiModel
+            ): Boolean = oldItem.key == newItem.key
 
-            override fun areContentsTheSame(oldItem: BoxOffice, newItem: BoxOffice): Boolean =
-                oldItem.key == newItem.key
-
-            override fun getChangePayload(oldItem: BoxOffice, newItem: BoxOffice): Boolean =
-                oldItem.key == newItem.key
+            override fun areContentsTheSame(
+                oldItem: BoxOfficeUiModel,
+                newItem: BoxOfficeUiModel
+            ): Boolean = oldItem == newItem
         }
     }
 }
-
-data class BoxOffice(
-    val key: Int = -1,
-    val boxOfficeType: String = "BoxOfficeType",
-    val name: String = "MovieName",
-    val ranking: List<Movie> = listOf(),
-)

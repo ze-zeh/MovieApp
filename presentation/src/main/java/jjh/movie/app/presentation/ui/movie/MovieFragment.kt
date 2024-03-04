@@ -9,7 +9,7 @@ class MovieFragment : BaseViewBindingFragment<FragmentMovieBinding>(FragmentMovi
 
     override fun initView() {
         with(binding) {
-            tvTest.text = safeArgs.movieKey.toString()
+            tvTest.text = "${safeArgs.movieKey}"
         }
     }
 }
