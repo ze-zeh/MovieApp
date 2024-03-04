@@ -1,15 +1,10 @@
 package jjh.movie.app.presentation.ui.category
 
-import android.os.Bundle
-import android.view.View
-import jjh.movie.app.presentation.ui.base.BaseViewBindingFragment
 import jjh.movie.app.presentation.databinding.FragmentCategoryBinding
+import jjh.movie.app.presentation.ui.base.BaseViewBindingFragment
 
 class CategoryFragment :
     BaseViewBindingFragment<FragmentCategoryBinding>(FragmentCategoryBinding::inflate) {
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
 
     override fun initView() {
         with(binding) {

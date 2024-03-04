@@ -1,7 +1,5 @@
 package jjh.movie.app.presentation.ui.home
 
-import android.os.Bundle
-import android.view.View
 import androidx.navigation.fragment.findNavController
 import jjh.movie.app.presentation.databinding.FragmentHomeBinding
 import jjh.movie.app.presentation.ui.base.BaseViewBindingFragment
@@ -10,27 +8,22 @@ import jjh.movie.app.presentation.ui.home.adapter.BoxOfficeAdapter
 import jjh.movie.app.presentation.ui.home.adapter.Movie
 
 class HomeFragment : BaseViewBindingFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
-    private val boxOfficeAdapter by lazy {
-        BoxOfficeAdapter(
-            { type ->
-                findNavController().navigate(
-                    HomeFragmentDirections.actionHomeFragmentToDetailFragment(type),
-                )
-            },
-            { key ->
-                findNavController().navigate(
-                    HomeFragmentDirections.actionHomeFragmentToMovieFragment(key),
-                )
-            },
-        )
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
 
     override fun initView() {
         with(binding) {
+            val boxOfficeAdapter = BoxOfficeAdapter(
+                detailClickListener = { boxOfficeType ->
+                    findNavController().navigate(
+                        HomeFragmentDirections.actionHomeFragmentToDetailFragment(boxOfficeType),
+                    )
+                },
+                movieClickListener = { movieKey ->
+                    findNavController().navigate(
+                        HomeFragmentDirections.actionHomeFragmentToMovieFragment(movieKey),
+                    )
+                },
+            )
+
             rvBoxOffice.adapter = boxOfficeAdapter
             boxOfficeAdapter.submitList(dummyBoxOffices)
         }

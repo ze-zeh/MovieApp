@@ -4,15 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView
 import jjh.movie.app.presentation.databinding.ItemRankingBinding
 import jjh.movie.app.presentation.ui.home.viewholder.RankingViewHolder
 
 class RankingAdapter(
     private val itemClickListener: (Int) -> Unit,
 ) :
-    ListAdapter<Movie, RecyclerView.ViewHolder>(rankingDiffCallback) {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    ListAdapter<Movie, RankingViewHolder>(rankingDiffCallback) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RankingViewHolder {
         return RankingViewHolder(
             ItemRankingBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -23,10 +22,8 @@ class RankingAdapter(
         )
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is RankingViewHolder) {
-            holder.bind(getItem(position))
-        }
+    override fun onBindViewHolder(holder: RankingViewHolder, position: Int) {
+        holder.bind(getItem(position))
     }
 
     companion object {
@@ -35,10 +32,7 @@ class RankingAdapter(
                 oldItem.key == newItem.key
 
             override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean =
-                oldItem.key == newItem.key
-
-            override fun getChangePayload(oldItem: Movie, newItem: Movie): Boolean =
-                oldItem.key == newItem.key
+                oldItem == newItem
         }
     }
 }

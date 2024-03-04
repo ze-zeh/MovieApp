@@ -4,15 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import jjh.movie.app.presentation.databinding.ItemBoxOfficeBinding
 import jjh.movie.app.presentation.ui.home.viewholder.BoxOfficeViewHolder
 
 class BoxOfficeAdapter(
     private val detailClickListener: (String) -> Unit,
     private val movieClickListener: (Int) -> Unit,
-) : ListAdapter<BoxOffice, ViewHolder>(boxOfficeDiffCallback) {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+) : ListAdapter<BoxOffice, BoxOfficeViewHolder>(boxOfficeDiffCallback) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoxOfficeViewHolder {
         return BoxOfficeViewHolder(
             ItemBoxOfficeBinding.inflate(
                 LayoutInflater.from(parent.context),
@@ -24,10 +23,8 @@ class BoxOfficeAdapter(
         )
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if (holder is BoxOfficeViewHolder) {
-            holder.bind(getItem(position))
-        }
+    override fun onBindViewHolder(holder: BoxOfficeViewHolder, position: Int) {
+        holder.bind(getItem(position))
     }
 
     companion object {
