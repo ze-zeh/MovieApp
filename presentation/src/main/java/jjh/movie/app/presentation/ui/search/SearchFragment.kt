@@ -1,8 +1,8 @@
-package jjh.movie.app.presentation.search
+package jjh.movie.app.presentation.ui.search
 
 import android.os.Bundle
 import android.view.View
-import jjh.movie.app.presentation.base.BaseViewBindingFragment
+import jjh.movie.app.presentation.ui.base.BaseViewBindingFragment
 import jjh.movie.app.presentation.databinding.FragmentSearchBinding
 
 class SearchFragment :

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_graph"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="jjh.movie.app.presentation.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_home_fragment_to_detail_fragment"
+            app:destination="@id/detail_fragment" />
+
+        <action
+            android:id="@+id/action_home_fragment_to_movie_fragment"
+            app:destination="@id/movie_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detail_fragment"
+        android:name="jjh.movie.app.presentation.ui.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+
+        <argument
+            android:name="box_office_Type"
+            app:argType="string" />
+
+        <argument
+            android:name="is_bottom_nav_visible"
+            android:defaultValue="false" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/movie_fragment"
+        android:name="jjh.movie.app.presentation.ui.movie.MovieFragment"
+        android:label="MovieFragment"
+        tools:layout="@layout/fragment_movie">
+
+        <argument
+            android:name="movie_key"
+            app:argType="integer" />
+
+        <argument
+            android:name="is_bottom_nav_visible"
+            android:defaultValue="false" />
+
+    </fragment>
+
+</navigation>

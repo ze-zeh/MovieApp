@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_nav_graph"
-    app:startDestination="@id/home_fragment">
+    app:startDestination="@id/home_graph">
 
-    <fragment
-        android:id="@+id/home_fragment"
-        android:name="jjh.movie.app.presentation.home.HomeFragment"
-        android:label="OnboardingFragment"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/search_fragment"
-        android:name="jjh.movie.app.presentation.search.SearchFragment"
-        android:label="SearchFragment"
-        tools:layout="@layout/fragment_search" />
-
-    <fragment
-        android:id="@+id/category_fragment"
-        android:name="jjh.movie.app.presentation.category.CategoryFragment"
-        android:label="CategoryFragment"
-        tools:layout="@layout/fragment_category" />
+    <include app:graph="@navigation/search_graph" />
+    <include app:graph="@navigation/home_graph" />
+    <include app:graph="@navigation/category_graph" />
 
 </navigation>

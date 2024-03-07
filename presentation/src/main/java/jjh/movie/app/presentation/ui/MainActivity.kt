@@ -1,7 +1,8 @@
-package jjh.movie.app.presentation
+package jjh.movie.app.presentation.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -21,11 +22,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initNavigation() {
-        navHostFragment =
-            supportFragmentManager.findFragmentById(binding.containerMain.id) as NavHostFragment?
-                ?: return
-        navController = navHostFragment.navController
+        with(binding) {
+            navHostFragment =
+                supportFragmentManager.findFragmentById(containerMain.id) as NavHostFragment?
+                    ?: return
+            navController = navHostFragment.navController
+            bottomNavBar.setupWithNavController(navController)
 
-        binding.bottomNavBar.setupWithNavController(navController)
+            navController.addOnDestinationChangedListener { _, _, args ->
+                bottomNavBar.isVisible = args?.getBoolean("is_bottom_nav_visible", true) ?: true
+            }
+        }
     }
 }
